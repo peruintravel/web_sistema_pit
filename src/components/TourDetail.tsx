@@ -534,7 +534,7 @@ export default function TourDetail() {
                 {tour.notes.length > 0 && (
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                     <h3 className="flex items-center gap-2 font-bold text-gray-900 mb-4">
-                      <AlertTriangle className="w-5 h-5 text-amber-500" /> importante
+                      <AlertTriangle className="w-5 h-5 text-amber-500" /> IMPORTANTE
                     </h3>
                     <ul className="space-y-2">
                       {tour.notes.map((note, i) => (
