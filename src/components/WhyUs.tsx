@@ -5,7 +5,7 @@ const features = [
   { icon: '📞', title: 'Soporte 24/7',              desc: 'Estamos disponibles en todo momento durante tu viaje para cualquier consulta o emergencia.' },
   { icon: '💰', title: 'Mejor precio garantizado',  desc: 'Contamos con una variedad de precios y paquetes acordes al mercado.' },
   { icon: '🌿', title: 'Turismo responsable',       desc: 'Comprometidos con el medio ambiente y las comunidades en cada uno de nuestros tours.' },
-  { icon: '🌿', title: 'Hola MUndo',       desc: 'HOla.' },
+  //{ icon: '🌿', title: 'Hola MUndo',       desc: 'HOla.' },
 ]
 
 export default function WhyUs() {
