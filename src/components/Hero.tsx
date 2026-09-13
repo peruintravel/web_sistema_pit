@@ -7,7 +7,7 @@ const slides = [
     sub: 'Paracas, Huacachina y las mejores playas de Ica te esperan.',
     lugar: '📍 Paracas · Ica',
   },
-  {
+  /*{
     image: '/Huancaya/DSC_0706000004.JPG',
     slogan: 'Lagunas que quitan el aliento',
     sub: 'Huancaya, la joya escondida de Lima. Lagos turquesas en plena sierra.',
@@ -19,12 +19,12 @@ const slides = [
     sub: 'Nevados, lagunas glaciares y paisajes únicos que solo Perú puede ofrecerte.',
     lugar: '📍 Nevado Raura',
   },
-  /*{
+  {
     image: '/Vichaycocha/IMG_20251004_074255.jpg',
     slogan: 'Paz entre montañas y lagunas',
     sub: 'Vichaycocha y Azulcocha, destinos escondidos de ensueño.',
     lugar: '📍 Vichaycocha',
-  },*/
+  },
   {
     image: '/MancoraAnoNuevo/WhatsApp_Image_2026-01-02_at_10.39.32_AM_1_-_dr.jpeg',
     slogan: 'Sol, playa y arena blanca',
@@ -36,7 +36,7 @@ const slides = [
     slogan: 'Cultura viva del Perú profundo',
     sub: 'Los carnavales de Cajamarca, la fiesta más colorida del norte.',
     lugar: '📍 Cajamarca',
-  },
+  },*/
 ]
 
 export default function Hero() {
