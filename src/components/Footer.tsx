@@ -9,7 +9,9 @@ export default function Footer() {
                 <img
                   src="/logo.png"
                   alt="Peru In Travel"
+                  //className="h-20 w-48 object-contain object-left brightness-0 invert" //Para corregir logo del pie de pagina
                   className="h-20 w-48 object-contain object-left brightness-0 invert"
+
                 />
               </div>
               <p className="text-sm leading-relaxed max-w-xs text-white/50">

@@ -7,7 +7,7 @@ const slides = [
     sub: 'Paracas, Huacachina y las mejores playas de Ica te esperan.',
     lugar: '📍 Paracas · Ica',
   },
-  /*{
+  {
     image: '/Huancaya/DSC_0706000004.JPG',
     slogan: 'Lagunas que quitan el aliento',
     sub: 'Huancaya, la joya escondida de Lima. Lagos turquesas en plena sierra.',
@@ -36,7 +36,7 @@ const slides = [
     slogan: 'Cultura viva del Perú profundo',
     sub: 'Los carnavales de Cajamarca, la fiesta más colorida del norte.',
     lugar: '📍 Cajamarca',
-  },*/
+  },
 ]
 
 export default function Hero() {
