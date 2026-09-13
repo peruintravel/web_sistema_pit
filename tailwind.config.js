@@ -7,6 +7,8 @@ export default {
         brand: {
           yellow:     '#F5A623',
           'yellow-d': '#D4891A',
+          orangePIT:     '#ffe100',
+          'orangePIT-d': '#fbe859',
           teal:       '#1A9CB0',
           'teal-d':   '#0D7A9A',
           'teal-l':   '#29B6D2',
