@@ -352,11 +352,12 @@ export default function TourDetail() {
             <DollarSign className="w-4 h-4 text-brand-teal" />
             <strong className="text-brand-teal">{tour.price}</strong>
           </span>
-          <span className="flex items-center gap-1.5 ml-auto">
+          {/* Rating oculto para público - visible solo en admin */}
+          {/* <span className="flex items-center gap-1.5 ml-auto">
             <Star className="w-4 h-4 text-brand-yellow fill-brand-yellow" />
             <strong>{tour.rating}</strong>
             <span className="text-gray-400">({tour.reviewCount} reseñas)</span>
-          </span>
+          </span> */}
         </div>
       </div>
 
@@ -494,7 +495,7 @@ export default function TourDetail() {
               <div className="space-y-4">
                 <div className="bg-white border border-gray-200 rounded-xl p-6">
                   <h3 className="flex items-center gap-2 font-bold text-gray-900 mb-4">
-                    <CheckCircle2 className="w-5 h-5 text-green-500" /> INCLUYE
+                    <CheckCircle2 className="w-5 h-5 text-green-500" /> incluye
                   </h3>
                   <ul className="space-y-2">
                     {tour.includes.map((item, i) => (
@@ -506,7 +507,7 @@ export default function TourDetail() {
                 {tour.notIncludes && (
                   <div className="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 className="flex items-center gap-2 font-bold text-gray-900 mb-4">
-                      <XCircle className="w-5 h-5 text-red-400" /> NO INCLUYE
+                      <XCircle className="w-5 h-5 text-red-400" /> no incluye
                     </h3>
                     <ul className="space-y-2">
                       {tour.notIncludes.map((item, i) => (
@@ -519,7 +520,7 @@ export default function TourDetail() {
                 {tour.recommendations && (
                   <div className="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 className="flex items-center gap-2 font-bold text-gray-900 mb-4">
-                      <Backpack className="w-5 h-5 text-brand-teal" /> RECOMENDACIONES
+                      <Backpack className="w-5 h-5 text-brand-teal" /> recomendaciones
                     </h3>
                     <ul className="space-y-2">
                       {tour.recommendations.map((item, i) => (
@@ -534,7 +535,7 @@ export default function TourDetail() {
                 {tour.notes.length > 0 && (
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                     <h3 className="flex items-center gap-2 font-bold text-gray-900 mb-4">
-                      <AlertTriangle className="w-5 h-5 text-amber-500" /> IMPORTANTE
+                      <AlertTriangle className="w-5 h-5 text-amber-500" /> importante
                     </h3>
                     <ul className="space-y-2">
                       {tour.notes.map((note, i) => (
