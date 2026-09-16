@@ -67,7 +67,7 @@ export default function Navbar() {
           >
             Contáctanos
           </Link>
-        </div>
+        </div> 
 
         {/* Hamburger */}
         <button
