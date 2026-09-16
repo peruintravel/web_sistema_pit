@@ -72,20 +72,7 @@ export default function PaymentModal({ onClose }: Props) {
     }
     
     if (!yapeScreenshot) {
-      alert('📱 Por favor sube la captura de pantalla de tu comprobante Yape para continuar')
-      return false
-    }
-    
-    // Validar que sea una imagen
-    if (!yapeScreenshot.type.startsWith('image/')) {
-      alert('Por favor sube un archivo de imagen válido')
-      return false
-    }
-    
-    // Validar tamaño (máximo 5MB)
-    if (yapeScreenshot.size > 5 * 1024 * 1024) {
-      alert('La imagen es demasiado grande. Por favor sube una imagen menor a 5MB')
-      return false
+      // Ya no se requiere screenshot
     }
     
     // Validación exitosa
@@ -212,25 +199,10 @@ export default function PaymentModal({ onClose }: Props) {
     const isPartialPayment = method === 'yape' || method === 'plin'
     const amountToPay = isPartialPayment ? totalPrice * 0.5 : totalPrice
     
-    // Convertir captura de Yape a base64 si existe
-    let yapeScreenshotBase64 = ''
-    if (method === 'yape' && yapeScreenshot) {
-      try {
-        const reader = new FileReader()
-        yapeScreenshotBase64 = await new Promise((resolve, reject) => {
-          reader.onloadend = () => resolve(reader.result as string)
-          reader.onerror = reject
-          reader.readAsDataURL(yapeScreenshot)
-        })
-      } catch (error) {
-        console.error('Error convirtiendo imagen:', error)
-      }
-    }
-    
-    // Preparar datos para guardar
+    // Preparar datos para guardar (sin Base64 de captura)
     const purchaseData = {
       name: name || 'Sin especificar',
-      email: method === 'card' ? email : '', // Solo guardar email si es tarjeta
+      email: method === 'card' ? email : '',
       method: methodLabels[method],
       tours: items.map(item => `${item.tourName} (${item.priceOption})`).join('; '),
       totalPersons: (() => {
@@ -245,10 +217,9 @@ export default function PaymentModal({ onClose }: Props) {
       culqiId: '',
       habitacion: habitacion || '',
       comentario: comentario || '',
-      passengers: passengers.filter(p => p.nombre || p.dni || p.edad || p.telefono || p.embarque), // Solo pasajeros con datos
-      // Datos de validación de Yape
+      passengers: passengers.filter(p => p.nombre || p.dni || p.edad || p.telefono || p.embarque),
       yapePhone: method === 'yape' && yapeValidated ? yapePhone : '',
-      yapeScreenshot: method === 'yape' && yapeValidated ? yapeScreenshotBase64 : ''
+      // No guardamos screenshot en BD para evitar sobrecargar con Base64
     }
 
     // Guardar en BD solo para métodos manuales (NO para tarjeta, eso lo hace /api/charge)
@@ -264,52 +235,49 @@ export default function PaymentModal({ onClose }: Props) {
       }
     }
 
-    // Construir mensaje de WhatsApp
-    let message = `🌄 *Reserva Peru In Travel*\n\n`
-    message += `👤 *Cliente:* ${name || '(sin especificar)'}\n`
-    message += `💳 *Método de pago:* ${methodLabels[method]}\n`
+    // Construir mensaje de WhatsApp sin emojis
+    let message = `RESERVA PERU IN TRAVEL\n\n`
+    message += `Cliente: ${name || '(sin especificar)'}\n`
+    message += `Metodo de pago: ${methodLabels[method]}\n`
     
-    // Agregar datos de validación de Yape si aplica
     if (method === 'yape' && yapeValidated) {
-      message += `\n📲 *Datos de Yape:*\n`
-      message += `   • Celular Yape: ${yapePhone}\n`
-      message += `   • Comprobante: Captura adjunta ✓\n`
-      message += `   • Monto yapeado: S/ ${(totalPrice * 0.5).toFixed(2)}\n`
+      message += `\nDATOS DE YAPE:\n`
+      message += `  - Celular Yape: ${yapePhone}\n`
+      message += `  - Monto yapeado: S/ ${(totalPrice * 0.5).toFixed(2)}\n`
     }
     
-    message += `\n📦 *Tours reservados:*\n`
+    message += `\nTOURS RESERVADOS:\n`
     items.forEach((item, i) => {
       message += `${i + 1}. ${item.tourName}\n`
-      message += `   📦 Opción: ${item.priceOption}\n`
-      message += `   📅 Fecha de partida: ${item.travelDate}\n`
-      message += `   👥 Personas: ${item.quantity} x ${item.personsPerPackage > 0 ? item.personsPerPackage : 1} = ${item.quantity * (item.personsPerPackage > 0 ? item.personsPerPackage : 1)} persona(s)\n`
-      message += `   💵 Subtotal: S/ ${(item.priceValue * item.quantity).toFixed(2)}\n\n`
+      message += `   Opcion: ${item.priceOption}\n`
+      message += `   Fecha de partida: ${item.travelDate}\n`
+      message += `   Personas: ${item.quantity} x ${item.personsPerPackage > 0 ? item.personsPerPackage : 1} = ${item.quantity * (item.personsPerPackage > 0 ? item.personsPerPackage : 1)} persona(s)\n`
+      message += `   Subtotal: S/ ${(item.priceValue * item.quantity).toFixed(2)}\n\n`
     })
-    message += `💰 *Total paquete: S/ ${totalPrice.toFixed(2)}*\n`
-    message += `💵 *Monto a pagar ahora: S/ ${amountToPay.toFixed(2)}*${isPartialPayment ? ' (50% adelanto)' : ' (pago completo)'}\n`
-    if (isPartialPayment) message += `💰 *Saldo pendiente: S/ ${(totalPrice - amountToPay).toFixed(2)}* (se paga antes del viaje)\n`
-    if (habitacion) message += `🛏️ *Habitación:* ${habitacion}\n`
+    message += `Total paquete: S/ ${totalPrice.toFixed(2)}\n`
+    message += `Monto a pagar ahora: S/ ${amountToPay.toFixed(2)}${isPartialPayment ? ' (50% adelanto)' : ' (pago completo)'}\n`
+    if (isPartialPayment) message += `Saldo pendiente: S/ ${(totalPrice - amountToPay).toFixed(2)} (se paga antes del viaje)\n`
+    if (habitacion) message += `Habitacion: ${habitacion}\n`
     
-    // Agregar datos de pasajeros
     const pasajerosConDatos = passengers.filter(p => p.nombre || p.dni || p.edad || p.telefono || p.embarque)
     if (pasajerosConDatos.length > 0) {
-      message += `\n👥 *Datos de pasajeros:*\n`
+      message += `\nDATOS DE PASAJEROS:\n`
       pasajerosConDatos.forEach((p, i) => {
         message += `${i+1}. ${p.nombre || 'Sin nombre'}`
         if (p.dni) message += ` - DNI: ${p.dni}`
         if (p.edad) message += ` - Edad: ${p.edad}`
         message += `\n`
-        if (p.telefono) message += `   📱 Tel: ${p.telefono}\n`
-        if (p.embarque) message += `   📍 Embarque: ${p.embarque}\n`
+        if (p.telefono) message += `   Tel: ${p.telefono}\n`
+        if (p.embarque) message += `   Embarque: ${p.embarque}\n`
       })
     }
     
-    if (voucherNote) message += `\n📎 *Nota del voucher:* ${voucherNote}\n`
-    if (comentario) message += `💬 *Comentarios adicionales:* ${comentario}\n`
+    if (voucherNote) message += `\nNota del voucher: ${voucherNote}\n`
+    if (comentario) message += `Comentarios: ${comentario}\n`
     
-    message += `\n✅ *Estado:* PENDIENTE CONFIRMACIÓN\n`
-    message += `🕒 *Fecha de solicitud:* ${new Date().toLocaleString('es-PE')}\n\n`
-    message += `Por favor confirmen disponibilidad y envíen datos para el ${methodLabels[method].toLowerCase()}. ¡Gracias! 🙏✨`
+    message += `\nEstado: PENDIENTE CONFIRMACION\n`
+    message += `Fecha de solicitud: ${new Date().toLocaleString('es-PE')}\n`
+    message += `Por favor confirmar disponibilidad. Gracias.`
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank')
     
     // Ir a pantalla de éxito en lugar de cerrar directamente
@@ -423,83 +391,12 @@ export default function PaymentModal({ onClose }: Props) {
                     type="tel"
                     value={yapePhone}
                     onChange={(e) => setYapePhone(e.target.value)}
-                    placeholder="999 999 999"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-lg text-center focus:outline-none focus:ring-2 focus:ring-[#6C1DDB] focus:border-transparent"
+                    placeholder="999 999 999"                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-lg text-center focus:outline-none focus:ring-2 focus:ring-[#6C1DDB] focus:border-transparent"
                     maxLength={11}
                   />
                   <p className="text-xs text-gray-500 mt-1">El mismo número desde donde hiciste el Yape</p>
                 </div>
 
-                <div>
-                  <div className="mb-2 bg-purple-50 border border-purple-200 rounded-xl p-3">
-                    <div className="flex items-center gap-2 mb-1">
-                      <div className="w-6 h-6 bg-[#6C1DDB] rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
-                        </svg>
-                      </div>
-                      <label className="text-sm font-bold text-purple-800">
-                        📸 Sube tu comprobante Yape *
-                      </label>
-                    </div>
-                    <p className="text-xs text-purple-700 ml-8">
-                      <strong>Importante:</strong> Debe mostrar el monto y destino del pago
-                    </p>
-                  </div>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-[#6C1DDB] transition-colors">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleScreenshotUpload}
-                      className="hidden"
-                      id="yape-screenshot"
-                    />
-                    <label htmlFor="yape-screenshot" className="cursor-pointer block">
-                      {yapeScreenshotPreview ? (
-                        <div className="space-y-2">
-                          <div className="relative bg-gray-100 rounded-lg p-2">
-                            <img 
-                              src={yapeScreenshotPreview} 
-                              alt="Preview comprobante" 
-                              className="max-h-60 w-auto mx-auto rounded-lg shadow-lg object-contain"
-                              onError={(e) => {
-                                console.error('Error cargando preview de imagen')
-                                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOTk5Ij5FcnJvciBjYXJnYW5kbyBpbWFnZW48L3RleHQ+PC9zdmc+'
-                              }}
-                            />
-                          </div>
-                          <div className="flex items-center justify-center gap-2">
-                            <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                            </svg>
-                            <p className="text-green-600 font-semibold text-sm">Captura cargada</p>
-                          </div>
-                          <p className="text-xs text-gray-500">Click para cambiar la imagen</p>
-                        </div>
-                      ) : (
-                        <div className="py-8">
-                          <svg className="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <p className="font-semibold text-gray-700">Click para subir captura</p>
-                          <p className="text-xs text-gray-500 mt-1">PNG, JPG o JPEG (máx. 5MB)</p>
-                        </div>
-                      )}
-                    </label>
-                  </div>
-                  <div className="mt-2 bg-amber-50 border border-amber-200 rounded-lg p-3">
-                    <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <p className="text-xs text-amber-700 font-medium">
-                        📱 <strong>¡Importante!</strong> La captura debe mostrar claramente el <strong>monto enviado</strong> y el <strong>número de destino</strong> para validar tu pago.
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Instrucciones visuales */}
@@ -1044,6 +941,11 @@ export default function PaymentModal({ onClose }: Props) {
                       <span>Monto a pagar</span><span>S/ {totalPrice.toFixed(2)}</span>
                     </div>
                   </div>
+                  {(method === 'yape' || method === 'plin') && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs text-amber-700 text-center font-medium">
+                      Al abrir WhatsApp, recuerda adjuntar la captura de tu comprobante de pago.
+                    </div>
+                  )}
                   <div className="flex gap-3">
                     <button onClick={() => setStep('instructions')} className="flex-1 border border-gray-300 text-gray-600 font-semibold py-3 rounded-xl hover:bg-gray-50">
                       ← Volver
