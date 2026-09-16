@@ -62,7 +62,8 @@ export default function Navbar() {
 
           <Link
             to="/contactanos"
-            className="bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-md"
+            //className="bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-md"
+            className="w-full bg-brand-yellow hover:bg-brand-yellow-d text-white font-bold py-4 rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
           >
             Contáctanos
           </Link>
@@ -126,8 +127,7 @@ export default function Navbar() {
             <li>
               <Link
                 to="/contactanos"
-                //className="inline-block bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full"
-                className="w-full bg-brand-yellow hover:bg-brand-yellow-d text-white font-bold py-4 rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
+                className="inline-block bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full"
                 onClick={() => setOpen(false)}
               >
                 Contáctanos
