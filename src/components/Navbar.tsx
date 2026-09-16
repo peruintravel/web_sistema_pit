@@ -63,7 +63,7 @@ export default function Navbar() {
           <Link
             to="/contactanos"
             //className="bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-md"
-            className="w-full bg-brand-yellow hover:bg-brand-yellow-d text-white font-bold py-4 rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
+            className="bg-brand-yellow hover:bg-brand-yellow-dtext-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity shadow-md"
           >
             Contáctanos
           </Link>
