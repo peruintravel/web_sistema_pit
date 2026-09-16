@@ -126,7 +126,8 @@ export default function Navbar() {
             <li>
               <Link
                 to="/contactanos"
-                className="inline-block bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full"
+                //className="inline-block bg-brand-gradient text-white text-sm font-semibold px-5 py-2 rounded-full"
+                className="w-full bg-brand-yellow hover:bg-brand-yellow-d text-white font-bold py-4 rounded-xl transition-colors shadow-md flex items-center justify-center gap-2"
                 onClick={() => setOpen(false)}
               >
                 Contáctanos
