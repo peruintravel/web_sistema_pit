@@ -821,7 +821,7 @@ export default function PaymentModal({ onClose }: Props) {
                               <div>
                                 <input 
                                   type="text" 
-                                  placeholder="DNI PAS CE *" 
+                                  placeholder="DNI/PAS/CE *" 
                                   value={passenger.dni}
                                   onChange={e => { 
                                     const p = [...passengers]; 
@@ -1392,7 +1392,7 @@ function CardPaymentForm({ totalPrice, tourNames = [], items, onSuccess }: CardP
                         />
                         <input 
                           type="text" 
-                          placeholder="DNI PAS CE *" 
+                          placeholder="DNI/PAS/CE *" 
                           value={p.dni}
                           onChange={e => {
                             const updated = [...passengers]
