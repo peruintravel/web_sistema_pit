@@ -15,7 +15,7 @@ const features = [
 const stats = [
   { value: '6+',    label: 'Años de experiencia' },
   { value: '20K+',  label: 'Viajeros felices'    },
-  { value: '20+',   label: 'Destinos'            },
+  { value: '15+',   label: 'Destinos'            },
   { value: '100%',  label: 'Formal y registrada' },
 ]
 

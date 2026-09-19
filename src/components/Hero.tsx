@@ -113,7 +113,7 @@ export default function Hero() {
           {[
             { value: '6+', label: 'Años de experiencia' },
             { value: '20K+', label: 'Viajeros felices'    },
-            { value: '20+', label: 'Destinos'            },
+            { value: '15+', label: 'Destinos'            },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-3xl font-extrabold text-brand-yellow">{s.value}</div>
