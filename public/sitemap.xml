@@ -3,7 +3,7 @@
   
   <!-- Página principal -->
   <url>
-    <loc>https://www.peruintravel.com/</loc>
+    <loc>https://peruintravel.com/</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Página de destinos -->
   <url>
-    <loc>https://www.peruintravel.com/destinos</loc>
+    <loc>https://peruintravel.com/destinos</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   
   <!-- Página de contacto -->
   <url>
-    <loc>https://www.peruintravel.com/contactanos</loc>
+    <loc>https://peruintravel.com/contactanos</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -27,105 +27,105 @@
   
   <!-- Tours individuales -->
   <url>
-    <loc>https://www.peruintravel.com/tour/lomas-lachay</loc>
+    <loc>https://peruintravel.com/tour/lomas-lachay</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/lunahuana-full-day</loc>
+    <loc>https://peruintravel.com/tour/lunahuana-full-day</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/paracas-huacachina-full-day</loc>
+    <loc>https://peruintravel.com/tour/paracas-huacachina-full-day</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/nazca</loc>
+    <loc>https://peruintravel.com/tour/nazca</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/colca</loc>
+    <loc>https://peruintravel.com/tour/colca</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/huacachina</loc>
+    <loc>https://peruintravel.com/tour/huacachina</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/paracas-huacachina</loc>
+    <loc>https://peruintravel.com/tour/paracas-huacachina</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/selva-central</loc>
+    <loc>https://peruintravel.com/tour/selva-central</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/ayacucho-semana-santa</loc>
+    <loc>https://peruintravel.com/tour/ayacucho-semana-santa</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/escalera-al-cielo-otao</loc>
+    <loc>https://peruintravel.com/tour/escalera-al-cielo-otao</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/playa-la-mina-yakupark</loc>
+    <loc>https://peruintravel.com/tour/playa-la-mina-yakupark</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/nevado-rajuntay</loc>
+    <loc>https://peruintravel.com/tour/nevado-rajuntay</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/huancaya-full-day</loc>
+    <loc>https://peruintravel.com/tour/huancaya-full-day</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/laguna-llaguapucro-full-day</loc>
+    <loc>https://peruintravel.com/tour/laguna-llaguapucro-full-day</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://www.peruintravel.com/tour/huancaya-laraos-2d1n</loc>
+    <loc>https://peruintravel.com/tour/huancaya-laraos-2d1n</loc>
     <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
