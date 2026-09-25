@@ -7,10 +7,10 @@ export default function Footer() {
             <div className="md:col-span-2">
               <div className="mb-3">
                 <img
-                  src="/logo.png"
+                  src="/logo 3.png"
                   alt="Peru In Travel"
-                  className="h-20 w-48 object-contain object-left brightness-0 invert" //Para corregir logo del pie de pagina
-                  //className="h-20 w-48 object-contain object-left brightness-0 invert"
+                  //className="h-20 w-48 object-contain object-left brightness-0 invert" //Para corregir logo del pie de pagina
+                  className="h-20 w-48 object-contain object-left brightness-0 invert"
 
                 />
               </div>
