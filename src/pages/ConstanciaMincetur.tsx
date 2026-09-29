@@ -41,10 +41,10 @@ export default function ConstanciaMincetur() {
                 src="/constancia-mincetur-placeholder.jpg" 
                 alt="Constancia MINCETUR - Peru In Travel"
                 className="w-full h-auto rounded-lg shadow-md"
-                onError={(e) => {
+                /*onError={(e) => {
                   // Fallback si la imagen no existe
                   e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"%3E%3Crect fill="%23f3f4f6" width="800" height="600"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="system-ui" font-size="24" fill="%236b7280"%3EConstancia MINCETUR - Imagen pendiente%3C/text%3E%3C/svg%3E'
-                }}
+                }}*/
               />
             </div>
           </div>
