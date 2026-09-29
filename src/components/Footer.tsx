@@ -122,14 +122,14 @@ export default function Footer() {
                 
                 <a 
                   href="/constancia-mincetur" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
                 >
                   Constancia MINCETUR
                 </a>
 
                 <a 
                   href="/codigo-esnna" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
                 >
                   Código de Conducta ESNNA
                 </a>
