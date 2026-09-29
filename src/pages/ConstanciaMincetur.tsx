@@ -42,7 +42,7 @@ export default function ConstanciaMincetur() {
             <div className="mb-8 flex justify-center">
               <div className="bg-gray-100 rounded-lg p-4 max-w-3xl w-full">
                 <img 
-                  src="/constancia-mincetur-placeholder.jpg" 
+                  src="/constancia-mincetur-placeholder.jpeg" 
                   alt="Constancia MINCETUR - Peru In Travel"
                   className="w-full h-auto rounded-lg shadow-md"
                   onError={(e) => {

@@ -30,7 +30,7 @@ export default function CodigoEsnna() {
           <div className="bg-white rounded-xl shadow-sm p-8">
             <div className="flex justify-center">
               <img 
-                src="/AFICHE-ESNNA.webp" 
+                src="/AFICHE-ESNNA.jpeg" 
                 alt="Código de Conducta ESNNA - Peru In Travel"
                 className="w-full h-auto rounded-lg shadow-md max-w-3xl"
               />
