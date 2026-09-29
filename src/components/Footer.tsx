@@ -101,21 +101,24 @@ export default function Footer() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 <a 
                   href="/politica-de-privacidad" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
+                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
                 >
                   Política de Privacidad
                 </a>
                 
                 <a 
                   href="/terminos-y-condiciones" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
+                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
                 >
                   Términos y Condiciones
                 </a>
                 
                 <a 
                   href="/politicas-devolucion" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
+                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
                 >
                   Políticas de Devolución
                 </a>
