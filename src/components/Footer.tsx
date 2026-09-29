@@ -101,52 +101,49 @@ export default function Footer() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 <a 
                   href="/politica-de-privacidad" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
-                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium flex items-center justify-center"
                 >
                   Política de Privacidad
                 </a>
                 
                 <a 
                   href="/terminos-y-condiciones" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
-                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium flex items-center justify-center"
                 >
                   Términos y Condiciones
                 </a>
                 
                 <a 
                   href="/politicas-devolucion" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
-                  //className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-left font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium flex items-center justify-center"
                 >
                   Políticas de Devolución
                 </a>
                 
                 <a 
                   href="/constancia-mincetur" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium flex items-center justify-center"
                 >
                   Constancia MINCETUR
                 </a>
 
                 <a 
                   href="/codigo-esnna" 
-                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium"
+                  className="bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg text-xs text-white/80 hover:text-white transition-all text-center font-medium flex items-center justify-center"
                 >
                   Código de Conducta ESNNA
                 </a>
                 
                 <a 
                   href="/libro-reclamaciones" 
-                  className="bg-red-600/20 hover:bg-red-600/30 border-2 border-red-500/50 hover:border-red-500 px-3 py-2 rounded-lg transition-all flex items-center gap-2 group"
+                  className="bg-red-600/20 hover:bg-red-600/30 border-2 border-red-500/50 hover:border-red-500 px-3 py-2 rounded-lg transition-all flex items-center justify-center gap-2 group"
                 >
                   <img 
                     src="/Libroreclamacion.jfif" 
                     alt="Libro de Reclamaciones" 
                     className="w-8 h-8 object-contain rounded bg-white/90 p-0.5"
                   />
-                  <span className="text-xs font-bold text-white group-hover:scale-105 transition-transform text-left leading-tight">
+                  <span className="text-xs font-bold text-white group-hover:scale-105 transition-transform text-center leading-tight">
                     Libro de<br/>Reclamaciones
                   </span>
                 </a>
