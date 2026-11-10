@@ -5,7 +5,7 @@ import jsPDF from 'jspdf'
 // Claves Culqi (se cargan desde .env)
 const CULQI_PUBLIC_KEY = (import.meta as any).env?.VITE_CULQI_PUBLIC_KEY
 const API_URL          = (import.meta as any).env?.VITE_API_URL || '' // Si está vacío, usará rutas relativas
-const WHATSAPP_NUMBER  = '51929648380'
+const WHATSAPP_NUMBER  = '51983469869' // WhatsApp de contacto para pagos
 
 // Validar que existe la Public Key
 if (!CULQI_PUBLIC_KEY) {

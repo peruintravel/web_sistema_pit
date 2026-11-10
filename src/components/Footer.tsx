@@ -86,6 +86,9 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>📍 Jr. Los Nogales 345, Los Ficus, Santa Anita</li>
                 <li>📞 +51 929 648 380</li>
+                <li>📞 +51 929 648 380</li>
+                <li>📞 +51 929 648 380</li>
+
                 <li>✉️ peruintravel.pe@gmail.com</li>
                 <li>🕐 Lun–Sáb: 9 am – 7 pm</li>
               </ul>
