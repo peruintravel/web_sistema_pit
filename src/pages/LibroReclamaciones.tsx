@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 // Formspree para recibir las reclamaciones (mismo ID que contacto)
-const FORMSPREE_ID = 'xykqjvne'
+const FORMSPREE_ID = 'myeerwyv'
 
 export default function LibroReclamaciones() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')

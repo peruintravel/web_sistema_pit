@@ -268,7 +268,7 @@ export default function QuienesSomos() {
               Ver destinos
             </Link>
             <a
-              href="https://wa.me/51929648380"
+              href="https://wa.me/51983469869"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full transition-colors shadow-lg flex items-center justify-center gap-2"

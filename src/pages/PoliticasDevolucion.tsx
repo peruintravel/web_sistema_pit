@@ -124,7 +124,7 @@ export default function PoliticasDevolucion() {
                 <li>
                   Comunicarse con <strong>Peru In Travel</strong> a través de:
                   <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                    <li>WhatsApp: <a href="https://wa.me/51929648380" className="text-brand-teal font-semibold hover:underline">+51 929 648 380</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/51983469869" className="text-brand-teal font-semibold hover:underline">+51 929 648 380</a></li>
                     <li>Correo: <a href="mailto:peruintravel.pe@gmail.com" className="text-brand-teal font-semibold hover:underline">peruintravel.pe@gmail.com</a></li>
                   </ul>
                 </li>
@@ -151,7 +151,7 @@ export default function PoliticasDevolucion() {
                 <strong>Peru In Travel</strong>
               </p>
               <p className="mb-1">
-                📞 WhatsApp: <a href="https://wa.me/51929648380" className="text-brand-teal font-semibold hover:underline">+51 929 648 380</a>
+                📞 WhatsApp: <a href="https://wa.me/51983469869" className="text-brand-teal font-semibold hover:underline">+51 929 648 380</a>
               </p>
               <p className="mb-1">
                 📧 Email: <a href="mailto:peruintravel.pe@gmail.com" className="text-brand-teal font-semibold hover:underline">peruintravel.pe@gmail.com</a>

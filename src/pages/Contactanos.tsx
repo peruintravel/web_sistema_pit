@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 // Reemplaza este ID con el tuyo de formspree.io (es gratis)
-const FORMSPREE_ID = 'xykqjvne'
+const FORMSPREE_ID = 'myeerwyv'
 
 export default function Contactanos() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -176,8 +176,8 @@ export default function Contactanos() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
               <p className="text-gray-600 mb-4">Respuesta inmediata</p>
-              <a href="https://wa.me/51929648380" target="_blank" rel="noopener noreferrer" className="text-brand-teal font-semibold hover:underline">
-                +51 929 648 380
+              <a href="https://wa.me/51983469869" target="_blank" rel="noopener noreferrer" className="text-brand-teal font-semibold hover:underline">
+                +51 983 469 869
               </a>
             </div>
 

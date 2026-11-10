@@ -17,7 +17,7 @@ import AddToCartButton from './AddToCartButton'
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const WHATSAPP_NUMBER = '51929648380' // WhatsApp de contacto
+const WHATSAPP_NUMBER = '51983469869' // WhatsApp de contacto
 const API_URL = (import.meta as any).env?.VITE_API_URL || ''
 
 // ─── Activity icon map ────────────────────────────────────────────────────────
