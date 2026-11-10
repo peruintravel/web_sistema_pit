@@ -57,7 +57,7 @@ export default function Footer() {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/51929648380"
+                  href="https://wa.me/51983469869"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp - Peru In Travel"

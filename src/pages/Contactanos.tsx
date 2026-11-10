@@ -202,8 +202,8 @@ export default function Contactanos() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Teléfono</h3>
               <p className="text-gray-600 mb-4">Lun–Sáb: 9am – 7pm</p>
-              <a href="tel:+51929648380" className="text-brand-teal font-semibold hover:underline">
-                +51 929 648 380
+              <a href="tel:+51983469869" className="text-brand-teal font-semibold hover:underline">
+                +51 983 469 869
               </a>
             </div>
           </div>

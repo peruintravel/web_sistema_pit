@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 
-const WHATSAPP_NUMBER = '51929648380' // WhatsApp de contacto
+const WHATSAPP_NUMBER = '51983469869' // WhatsApp de contacto
 
 interface Props {
   tourName?: string
@@ -129,8 +129,8 @@ export default function WhatsAppChat({ tourName }: Props) {
 
             <p className="text-center text-xs text-gray-400">
               También puedes llamarnos al{' '}
-              <a href="tel:+51929648380" className="text-green-600 font-semibold hover:underline">
-                +51 929 648 380
+              <a href="tel:+51983469869" className="text-green-600 font-semibold hover:underline">
+                +51 983 469 869
               </a>
             </p>
           </div>
